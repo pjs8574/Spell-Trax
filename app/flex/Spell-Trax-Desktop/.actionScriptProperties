@@ -12,6 +12,7 @@
       <libraryPathEntry kind="1" linkType="1" path="libs"/>
       <libraryPathEntry kind="3" linkType="1" path="/Spell-Trax-Core/bin/Spell-Trax-Core.swc" useDefaultLinkType="false"/>
       <libraryPathEntry kind="3" linkType="1" path="/Spell-Trax-Shared-Offline/bin/Spell-Trax-Shared-Offline.swc" useDefaultLinkType="false"/>
+      <libraryPathEntry kind="1" linkType="1" path="${DOCUMENTS}/Spell-Trax/app/flex/Spell-Trax-Shared-Libs"/>
     </libraryPath>
     <sourceAttachmentPath/>
   </compiler>

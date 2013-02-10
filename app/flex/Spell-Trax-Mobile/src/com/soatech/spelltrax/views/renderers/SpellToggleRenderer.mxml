@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:IconItemRenderer xmlns:fx="http://ns.adobe.com/mxml/2009" 
+					xmlns:s="library://ns.adobe.com/flex/spark"  
+					minHeight="64" iconWidth="64" iconHeight="64"
+					click="renderer_clickHandler(event)"
+					labelFunction="generateLabel">
+	
+	<fx:Script>
+		<![CDATA[
+			import com.soatech.spelltrax.events.SelectToggleEvent;
+			import com.soatech.spelltrax.models.vo.Spell;
+			
+			import spark.components.CalloutButton;
+			import spark.components.CheckBox;
+			
+			//-----------------------------------------------------------------
+			//
+			// Variables
+			//
+			//-----------------------------------------------------------------
+			
+			private var usedCB:CheckBox;
+			
+			private var optionsBtn:CalloutButton;
+			
+			private function get spell():Spell
+			{
+				return this.data as Spell;
+			}
+			
+			//-----------------------------------------------------------------
+			//
+			// Overridden Methods
+			//
+			//-----------------------------------------------------------------
+			
+			override protected function createChildren():void
+			{
+				super.createChildren();
+				
+				if( !usedCB )
+				{
+					usedCB = new CheckBox();
+					usedCB.x = 10;
+					usedCB.width = this.minHeight;
+					usedCB.height = this.minHeight;
+					usedCB.addEventListener(MouseEvent.CLICK, usedCB_clickHandler);
+					this.addChild( usedCB );
+				}
+			}
+			
+			override public function set data(value:Object):void
+			{
+				super.data = value;
+				
+				if( value as Spell )
+					populate();
+			}
+			
+			override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number):void
+			{
+				super.updateDisplayList(unscaledWidth, unscaledHeight);
+				
+				if( usedCB )
+				{
+					this.labelDisplay.x = usedCB.width;
+				}
+			}
+			
+			//-----------------------------------------------------------------
+			//
+			// Methods
+			//
+			//-----------------------------------------------------------------
+			
+			protected function populate():void
+			{
+				usedCB.selected = spell.used;
+			}
+			
+			protected function generateLabel(item:Object):String
+			{
+				var spell:Spell = item as Spell;
+				var text:String = "";
+				
+				if( !spell )
+					return text;
+				
+				if( spell.isDomain )
+					text += "D";
+				
+				text += spell.level.toString();
+				text += ": ";
+				text += spell.name;
+				
+				return text;
+			}
+			
+			//-----------------------------------------------------------------
+			//
+			// Event Handlers
+			//
+			//-----------------------------------------------------------------
+			
+			protected function renderer_clickHandler(event:MouseEvent):void
+			{
+				usedCB.selected = !usedCB.selected;
+				spell.used = usedCB.selected;
+				
+				dispatchEvent( new SelectToggleEvent( SelectToggleEvent.TOGGLE, this.data ) );
+			}
+			
+			protected function usedCB_clickHandler(event:MouseEvent):void
+			{
+				event.stopImmediatePropagation();
+				event.preventDefault();
+				
+				spell.used = usedCB.selected;
+				
+				dispatchEvent( new SelectToggleEvent( SelectToggleEvent.TOGGLE, this.data ) );
+			}
+		]]>
+	</fx:Script>
+	
+</s:IconItemRenderer>

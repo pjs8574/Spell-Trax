@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		implements="com.soatech.spelltrax.views.interfaces.ISpellBookEdit">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<s:layout>
+		<s:VerticalLayout paddingTop="10" paddingLeft="10" paddingBottom="10" paddingRight="10"/>
+	</s:layout>
+	
+	<fx:Script>
+		<![CDATA[
+			
+			public function get addBtn():Button
+			{
+				return this._addBtn;
+			}
+			
+			public function get backBtn():Button
+			{
+				return this._backBtn;
+			}
+			
+			public function get deleteBtn():Button
+			{
+				return this._deleteBtn;
+			}
+			
+			public function get nameInput():TextInput
+			{
+				return this._nameInput;
+			}
+			
+			public function get refreshBtn():Button
+			{
+				return this._refreshBtn;
+			}
+			
+			public function get saveBtn():Button
+			{
+				return this._saveBtn;
+			}
+			
+			public function get spellList():List
+			{
+				return this._spellList;
+			}
+		]]>
+	</fx:Script>
+	
+	<s:navigationContent>
+		<s:Button id="_backBtn" label="Back" />
+	</s:navigationContent>
+	
+	<s:actionContent>
+		<s:CalloutButton id="_optionsCallout" label="..." verticalPosition="after" 
+						 horizontalPosition="middle" 
+						 calloutDestructionPolicy="never">
+			<s:calloutLayout>
+				<s:VerticalLayout paddingTop="10" paddingBottom="10" 
+								  paddingLeft="10" paddingRight="10" 
+								  horizontalAlign="center" gap="5"/>
+			</s:calloutLayout>
+			<s:calloutContent>
+				<s:Button id="_addBtn" label="Add Spell" width="100%" />
+				<s:Button id="_saveBtn" label="Save" width="100%" />
+				<s:Button id="_refreshBtn" label="Refresh Spells" width="100%" />
+				<s:Button id="_deleteBtn" label="Delete" width="100%" />
+			</s:calloutContent>
+		</s:CalloutButton>
+	</s:actionContent>
+	
+	<s:TextInput id="_nameInput" prompt="Name"/>
+	
+	<s:List id="_spellList" labelField="name" borderVisible="true" 
+			height="100%" width="100%"
+			itemRenderer="com.soatech.spelltrax.views.renderers.SpellToggleRenderer"/>
+	
+</s:View>

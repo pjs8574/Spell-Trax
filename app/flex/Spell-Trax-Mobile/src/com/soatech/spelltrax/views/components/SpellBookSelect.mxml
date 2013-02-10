@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		xmlns:s="library://ns.adobe.com/flex/spark" title="Spell Books"
+		implements="com.soatech.spelltrax.views.interfaces.ISpellBookSelect">
+	<fx:Declarations>
+		<!-- Place non-visual elements (e.g., services, value objects) here -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			public function get addBtn():Button
+			{
+				return this._addBtn;
+			}
+			
+			public function get bookList():List
+			{
+				return this._bookList;
+			}
+		]]>
+	</fx:Script>
+	
+	<s:actionContent>
+		<s:Button id="_addBtn" label="Add Book" />
+	</s:actionContent>
+	
+	<s:List id="_bookList" top="10" bottom="10" left="10" right="10" 
+			labelField="name" borderVisible="true"/>
+	
+</s:View>

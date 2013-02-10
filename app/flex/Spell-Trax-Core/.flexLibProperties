@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <flexLibProperties includeAllClasses="true" useMultiPlatformConfig="false" version="3">
-  <includeClasses/>
+  <includeClasses>
+    <classEntry path="com.soatech.spelltrax.CoreContext"/>
+    <classEntry path="com.soatech.spelltrax.models.SpellsProxy"/>
+    <classEntry path="com.soatech.spelltrax.models.vo.Spell"/>
+    <classEntry path="com.soatech.spelltrax.events.SpellEvent"/>
+    <classEntry path="com.soatech.spelltrax.commands.SpellsLoadCommand"/>
+    <classEntry path="com.soatech.spelltrax.services.interfaces.ISpellService"/>
+    <classEntry path="com.soatech.spelltrax.views.interfaces.ISpellSelect"/>
+    <classEntry path="com.soatech.spelltrax.commands.SpellBooksLoadCommand"/>
+    <classEntry path="com.soatech.spelltrax.events.SpellBookEvent"/>
+    <classEntry path="com.soatech.spelltrax.models.vo.SpellBook"/>
+    <classEntry path="com.soatech.spelltrax.models.SpellBooksProxy"/>
+    <classEntry path="com.soatech.spelltrax.services.interfaces.ISpellBookService"/>
+    <classEntry path="com.soatech.spelltrax.views.interfaces.ISpellBookSelect"/>
+    <classEntry path="com.soatech.spelltrax.views.interfaces.ISpellBookSelectMediator"/>
+    <classEntry path="com.soatech.spelltrax.views.SpellBookSelectMediatorBase"/>
+    <classEntry path="com.soatech.spelltrax.views.interfaces.IAppMediator"/>
+    <classEntry path="com.soatech.spelltrax.views.AppMediatorBase"/>
+    <classEntry path="com.soatech.spelltrax.views.interfaces.ISpellBookEdit"/>
+    <classEntry path="com.soatech.spelltrax.views.interfaces.ISpellBookEditMediator"/>
+    <classEntry path="com.soatech.spelltrax.views.SpellBookEditMediatorBase"/>
+    <classEntry path="com.soatech.spelltrax.commands.SpellBookLoadSpellsCommand"/>
+  </includeClasses>
   <includeResources/>
   <namespaceManifests/>
 </flexLibProperties>
