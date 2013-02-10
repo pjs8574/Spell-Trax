@@ -47,11 +47,11 @@ package com.soatech.spelltrax.services
 			this._responder = responder;
 			
 			var list:ArrayCollection = new ArrayCollection();
-			list.addItem(new Spell(1, "Cure Minor Wounds"));
-			list.addItem(new Spell(2, "Cure Light Wounds", 1));
 			list.addItem(new Spell(3, "Cure Moderate Wounds", 2));
 			list.addItem(new Spell(4, "Cure Light Wounds", 1, true));
+			list.addItem(new Spell(2, "Cure Light Wounds", 1));
 			list.addItem(new Spell(5, "Cure Moderate Wounds", 2, true));
+			list.addItem(new Spell(1, "Cure Minor Wounds"));
 			
 			responder.result(list);
 		}

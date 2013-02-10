@@ -11,11 +11,15 @@ package com.soatech.spelltrax.views
 	
 	import flash.events.MouseEvent;
 	
+	import mx.collections.ArrayCollection;
+	import mx.utils.ObjectUtil;
 	import mx.validators.StringValidator;
 	import mx.validators.Validator;
 	
 	import org.robotlegs.core.IMediator;
 	import org.robotlegs.mvcs.Mediator;
+	
+	import spark.collections.Sort;
 	
 	public class SpellBookEditMediatorBase extends Mediator implements ISpellBookEditMediator, IMediator
 	{
@@ -136,6 +140,35 @@ package com.soatech.spelltrax.views
 		
 		/**
 		 * 
+		 * @param itemA
+		 * @param itemB
+		 * @param fields
+		 * @return 
+		 * 
+		 */		
+		protected function sortSpells(itemA:Spell, itemB:Spell, fields:Array=null):int
+		{
+			var retVal:int = 0;
+			
+			// sort domain at bottom
+			if(itemA.isDomain === itemB.isDomain)
+				retVal = 0;
+			else if(!itemA.isDomain && itemB.isDomain)
+				retVal = -1;
+			else if(itemA.isDomain && !itemB.isDomain)
+				retVal = 1;
+			
+			// after sort by level
+			if( retVal === 0 )
+			{
+				retVal = ObjectUtil.numericCompare(Number(itemA.level), Number(itemB.level));
+			}
+			
+			return retVal;
+		}
+		
+		/**
+		 * 
 		 * @return 
 		 * 
 		 */		
@@ -157,20 +190,40 @@ package com.soatech.spelltrax.views
 		//
 		//---------------------------------------------------------------------
 		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
 		public function addBtn_clickHandler(event:MouseEvent):void
 		{
 		}
 		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
 		public function backBtn_clickHandler(event:MouseEvent):void
 		{
 			dispatch( new SpellBookEvent( SpellBookEvent.EDIT_BACK ) );
 		}
 		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
 		public function book_createSuccessHandler(event:SpellBookEvent):void
 		{
 			this.book_saveSuccessHandler(event);
 		}
 		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
 		public function book_saveSuccessHandler(event:SpellBookEvent):void
 		{
 			this.book = event.spellBook;
@@ -178,15 +231,36 @@ package com.soatech.spelltrax.views
 			this.populate();
 		}
 		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
 		public function book_spellListChangedHandler(event:SpellBookEvent):void
 		{
 			view.spellList.dataProvider = event.spellList;
+			(view.spellList.dataProvider as ArrayCollection).sort = new Sort();
+			(view.spellList.dataProvider as ArrayCollection).sort.compareFunction = sortSpells;
+			(view.spellList.dataProvider as ArrayCollection).refresh();
 		}
 		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
 		public function refreshBtn_clickHandler(event:MouseEvent):void
 		{
+			// send to a command to reset them in the db
+			
+			// reload from db
 		}
 		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
 		public function saveBtn_clickHandler(event:MouseEvent):void
 		{
 			book.name = view.nameInput.text;
@@ -201,11 +275,21 @@ package com.soatech.spelltrax.views
 				
 		}
 		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
 		public function spellList_selectEditHandler(event:SelectToggleEvent):void
 		{
 			dispatch( new SpellEvent( SpellEvent.EDIT, (event.data as Spell) ) );
 		}
 		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */		
 		public function spellList_selectToggleHandler(event:SelectToggleEvent):void
 		{
 			dispatch( new SpellEvent( SpellEvent.TOGGLE_USE, (event.data as Spell) ) );
