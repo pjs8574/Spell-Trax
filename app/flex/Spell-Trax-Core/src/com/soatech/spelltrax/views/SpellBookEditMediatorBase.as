@@ -77,13 +77,14 @@ package com.soatech.spelltrax.views
 			
 			// context events
 			addContextListener( SpellBookEvent.CREATE_SUCCESS, this.book_createSuccessHandler );
+			addContextListener( SpellBookEvent.DELETE_SUCCESS, this.book_deleteSuccessHandler );
 			addContextListener( SpellBookEvent.SAVE_SUCCESS, this.book_saveSuccessHandler );
 			addContextListener( SpellBookEvent.SPELL_LIST_CHANGED, book_spellListChangedHandler );
 			
 			// view events
 			eventMap.mapListener( view.addBtn, MouseEvent.CLICK, addBtn_clickHandler );
 			eventMap.mapListener( view.backBtn, MouseEvent.CLICK, backBtn_clickHandler );
-			eventMap.mapListener( view.deleteBtn, MouseEvent.CLICK, backBtn_clickHandler );
+			eventMap.mapListener( view.deleteBtn, MouseEvent.CLICK, deleteBtn_clickHandler );
 			eventMap.mapListener( view.refreshBtn, MouseEvent.CLICK, refreshBtn_clickHandler );
 			eventMap.mapListener( view.saveBtn, MouseEvent.CLICK, saveBtn_clickHandler );
 			eventMap.mapListener( view.spellList, SelectToggleEvent.EDIT, spellList_selectEditHandler );
@@ -93,7 +94,7 @@ package com.soatech.spelltrax.views
 			
 			dispatch(new SpellBookEvent(SpellBookEvent.LOAD_SPELL_LIST, book));
 		}
-		
+
 		//---------------------------------------------------------------------
 		//
 		// Methods
@@ -218,6 +219,15 @@ package com.soatech.spelltrax.views
 		{
 			this.book_saveSuccessHandler(event);
 		}
+
+        /**
+         *
+         * @param event
+         */
+        protected function book_deleteSuccessHandler(event:SpellBookEvent):void
+        {
+            this.backBtn_clickHandler(null);
+        }
 		
 		/**
 		 * 
@@ -243,6 +253,16 @@ package com.soatech.spelltrax.views
 			(view.spellList.dataProvider as ArrayCollection).sort.compareFunction = sortSpells;
 			(view.spellList.dataProvider as ArrayCollection).refresh();
 		}
+
+        /**
+         *
+         * @param event
+         */
+        protected function deleteBtn_clickHandler(event:MouseEvent):void
+        {
+            if( book.pid )
+                dispatch(new SpellBookEvent(SpellBookEvent.DELETE, book));
+        }
 		
 		/**
 		 * 
@@ -294,5 +314,5 @@ package com.soatech.spelltrax.views
 		{
 			dispatch( new SpellEvent( SpellEvent.TOGGLE_USE, (event.data as Spell) ) );
 		}
-	}
+    }
 }

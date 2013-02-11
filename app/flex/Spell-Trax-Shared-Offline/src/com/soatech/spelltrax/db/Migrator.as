@@ -9,7 +9,7 @@ package com.soatech.spelltrax.db
 	
 	import org.robotlegs.mvcs.Actor;
 
-	[Event(name="MIGRATION_COMPLETE", type="com.follett.fsc.reader.events.MigrationEvent")]
+	[Event(name="MIGRATION_COMPLETE", type="com.soatech.spelltrax.events.MigrationEvent")]
 	public class Migrator extends Actor
 	{
 		//---------------------------------------------------------------------
@@ -142,8 +142,11 @@ package com.soatech.spelltrax.db
 					statementBatch.push(new QueuedStatement(SQL_UPDATE_VERSION, {currentVersion: migration.version}));
 				}
 			}
-			
-			_dbi.executeModify(statementBatch, onMigrationComplete, onMigrationFault);
+
+            if( statementBatch.length )
+			    _dbi.executeModify(statementBatch, onMigrationComplete, onMigrationFault);
+            else
+                onMigrationComplete(null);
 		}
 		
 		//----------------------------------------------------------------------

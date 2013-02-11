@@ -16,6 +16,8 @@ package com.soatech.spelltrax.events
 		
 		public static const CREATE:String = "SpellBookEvent.CREATE";
 		public static const CREATE_SUCCESS:String = "SpellBookEvent.CREATE_SUCCESS";
+        public static const DELETE:String = "SpellBookEvent.DELETE";
+        public static const DELETE_SUCCESS:String = "SpellBookEvent.DELETE_SUCCESS";
 		public static const EDIT:String = "SpellBookEvent.EDIT";
 		public static const EDIT_BACK:String = "SpellBookEvent.EDIT_BACK";
 		public static const LIST_CHANGED:String = "SpellBookEvent.LIST_CHANGED";

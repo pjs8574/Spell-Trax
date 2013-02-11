@@ -7,6 +7,8 @@ package com.soatech.spelltrax.services.interfaces
 	public interface ISpellBookService
 	{
 		function create(book:SpellBook, responder:IResponder):void;
-		function load(responder:IResponder):void;
-	}
+        function load(responder:IResponder):void;
+        function remove(book:SpellBook, responder:IResponder):void;
+        function save(book:SpellBook, responder:IResponder):void;
+    }
 }

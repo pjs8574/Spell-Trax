@@ -11,12 +11,15 @@
             <entry module-name="Spell-Trax-Shared-Offline" build-configuration-name="Spell-Trax-Shared-Offline">
               <dependency linkage="Merged" />
             </entry>
+            <entry library-id="88180766-d470-4840-a024-5439da4de014">
+              <dependency linkage="Merged" />
+            </entry>
           </entries>
           <sdk name="4.6" />
         </dependencies>
         <compiler-options />
         <packaging-air-desktop />
-        <packaging-android package-file-name="Spell-Trax-Mobile" />
+        <packaging-android enabled="true" use-generated-descriptor="false" custom-descriptor-path="$MODULE_DIR$/src/Mobile-app.xml" package-file-name="Spell-Trax-Mobile" />
         <packaging-ios package-file-name="Spell-Trax-Mobile" />
       </configuration>
     </configurations>
@@ -32,6 +35,17 @@
     <orderEntry type="module" module-name="Spell-Trax-Shared-Offline" />
     <orderEntry type="module" module-name="Spell-Trax-Core" />
     <orderEntry type="library" name="Spell-Trax-Shared-Libs" level="application" />
+    <orderEntry type="module-library">
+      <library type="flex">
+        <properties id="88180766-d470-4840-a024-5439da4de014" />
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../Spell-Trax-Shared-Libs" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../Spell-Trax-Shared-Libs" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

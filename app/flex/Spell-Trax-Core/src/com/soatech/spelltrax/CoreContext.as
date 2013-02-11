@@ -1,7 +1,10 @@
 package com.soatech.spelltrax
 {
-	import com.soatech.spelltrax.commands.SpellBookLoadSpellsCommand;
-	import com.soatech.spelltrax.commands.SpellBooksLoadCommand;
+import com.soatech.spelltrax.commands.SpellBookCreateCommand;
+import com.soatech.spelltrax.commands.SpellBookDeleteCommand;
+import com.soatech.spelltrax.commands.SpellBookLoadSpellsCommand;
+import com.soatech.spelltrax.commands.SpellBookSaveCommand;
+import com.soatech.spelltrax.commands.SpellBooksLoadCommand;
 	import com.soatech.spelltrax.commands.SpellsLoadCommand;
 	import com.soatech.spelltrax.events.SpellBookEvent;
 	import com.soatech.spelltrax.events.SpellEvent;
@@ -49,8 +52,11 @@ package com.soatech.spelltrax
 			// services
 			
 			// commands
+            commandMap.mapEvent( SpellBookEvent.CREATE, SpellBookCreateCommand );
 			commandMap.mapEvent( SpellBookEvent.LOAD, SpellBooksLoadCommand );
 			commandMap.mapEvent( SpellBookEvent.LOAD_SPELL_LIST, SpellBookLoadSpellsCommand );
+            commandMap.mapEvent( SpellBookEvent.DELETE, SpellBookDeleteCommand );
+			commandMap.mapEvent( SpellBookEvent.SAVE, SpellBookSaveCommand );
 			commandMap.mapEvent( SpellEvent.LOAD, SpellsLoadCommand );
 			
 		}

@@ -42,6 +42,10 @@ package com.soatech.spelltrax.services
 		protected const SQL_SELECT_ALL:String = "SELECT pid, name FROM spellBooks";
 		
 		protected const SQL_INSERT:String = "INSERT INTO spellBooks (name) VALUES (:name)";
+
+        protected const SQL_UPDATE:String = "UPDATE spellBooks SET name = :name WHERE pid = :pid";
+
+        protected const SQL_DELETE:String = "DELETE FROM spellBooks WHERE pid = :pid";
 		
 		//---------------------------------------------------------------------
 		//
@@ -58,6 +62,7 @@ package com.soatech.spelltrax.services
 		public function create(book:SpellBook, responder:IResponder):void
 		{
 			this._book = book;
+            this._responder = responder;
 			
 			var sb:Vector.<QueuedStatement> = new Vector.<QueuedStatement>();
 			sb.push(new QueuedStatement(SQL_INSERT, {name: book.name}));
@@ -76,6 +81,35 @@ package com.soatech.spelltrax.services
 			dbProxy.applicationDb.execute(SQL_SELECT_ALL, {}, this.load_resultHandler, 
 				null, this.load_errorHandler);
 		}
+
+        /**
+         *
+         * @param book
+         * @param responder
+         */
+        public function remove(book:SpellBook, responder:IResponder):void {
+            this._book = book;
+            this._responder = responder;
+
+            var sb:Vector.<QueuedStatement> = new Vector.<QueuedStatement>();
+            sb.push(new QueuedStatement(SQL_DELETE, {pid: book.pid}));
+            dbProxy.applicationDb.executeModify(sb, this.delete_resultHandler, this.delete_errorHandler);
+        }
+
+        /**
+         *
+         * @param book
+         * @param responder
+         */
+        public function save(book:SpellBook, responder:IResponder):void
+        {
+            this._book = book;
+            this._responder = responder;
+
+            var sb:Vector.<QueuedStatement> = new Vector.<QueuedStatement>();
+            sb.push(new QueuedStatement(SQL_UPDATE, {name: book.name, pid: book.pid}));
+            dbProxy.applicationDb.executeModify(sb, this.save_resultHandler, this.save_errorHandler);
+        }
 		
 		//---------------------------------------------------------------------
 		//
@@ -104,6 +138,24 @@ package com.soatech.spelltrax.services
 			
 			this._responder.result(this._book);
 		}
+
+        /**
+         *
+         * @param error
+         */
+        protected function delete_errorHandler(error:SQLError):void
+        {
+            CONFIG::debugtrace{ trace("SpellBookService::delete_errorHandler: " + error.toString()); }
+        }
+
+        /**
+         *
+         * @param results
+         */
+        protected function delete_resultHandler(results:Vector.<SQLResult>):void
+        {
+            this._responder.result(this._book);
+        }
 		
 		/**
 		 * 
@@ -132,5 +184,15 @@ package com.soatech.spelltrax.services
 			
 			this._responder.result(list);
 		}
-	}
+
+        protected function save_errorHandler(error:SQLError):void
+        {
+            CONFIG::debugtrace{ trace("SpellBookService::save_errorHandler: " + error.toString()); }
+        }
+
+        protected function save_resultHandler(results:Vector.<SQLResult>):void
+        {
+            this._responder.result(this._book);
+        }
+    }
 }

@@ -56,7 +56,7 @@ package com.soatech.spelltrax.commands
 			
 			// spellBooks
 			migration.queries.push("CREATE TABLE spellBooks ( pid integer primary key autoincrement, " +
-				"name text)");
+				"name text, createdOn text, updatedOn text)");
 			migration.queries.push("CREATE TRIGGER insert_spellBooks_timestamp " +
 				"AFTER INSERT ON spellBooks BEGIN UPDATE spellBooks SET createdOn = " +
 				"DATETIME('NOW') WHERE pid = new.pid; END");
@@ -67,7 +67,7 @@ package com.soatech.spelltrax.commands
 			// spells
 			migration.queries.push("CREATE TABLE spells ( pid integer primary key autoincrement, " +
 				"description text, isDomain integer, level integer, name text, " +
-				"notes text )");
+				"notes text, createdOn text, updatedOn text )");
 			migration.queries.push("CREATE TRIGGER insert_spells_timestamp " +
 				"AFTER INSERT ON spells BEGIN UPDATE spells SET createdOn = " +
 				"DATETIME('NOW') WHERE pid = new.pid; END");
@@ -78,7 +78,7 @@ package com.soatech.spelltrax.commands
 			
 			// spellBookSpells
 			migration.queries.push("CREATE TABLE spellBookSpells( spellBookId integer, " +
-				"spellId integer, used integer )");
+				"spellId integer, used integer, createdOn text, updatedOn text )");
 			migration.queries.push("CREATE TRIGGER insert_spellBookSpells_timestamp " +
 				"AFTER INSERT ON spellBookSpells BEGIN UPDATE spellBookSpells SET createdOn = " +
 				"DATETIME('NOW') WHERE pid = new.pid; END");
