@@ -51,6 +51,7 @@ package com.soatech.spelltrax.commands
 			if( elsHelper.isSupported && 0 )
 			{
 				CONFIG::debugtrace{ trace("ELS Supported"); }
+				file = File.applicationStorageDirectory.resolvePath(dbProxy.APPLICATION_KEY_ELS_ID + ".enc.db");
 				key = elsHelper.getEncryptedKey(dbProxy.APPLICATION_KEY_ELS_ID);
 			
 				dbProxy.applicationKey = key;
@@ -59,6 +60,7 @@ package com.soatech.spelltrax.commands
 			else
 			{
 				CONFIG::debugtrace{ trace("ELS NOT Supported"); }
+				file = File.applicationStorageDirectory.resolvePath(dbProxy.APPLICATION_KEY_ELS_ID + ".db");
 				db = new SQLRunner(file);
 			}
 			

@@ -1,7 +1,9 @@
 package com.soatech.spelltrax.views
 {
+	import com.soatech.spelltrax.events.DataBaseEvent;
 	import com.soatech.spelltrax.events.SpellBookEvent;
 	import com.soatech.spelltrax.views.components.SpellBookEdit;
+	import com.soatech.spelltrax.views.components.SpellBookSelect;
 	import com.soatech.spelltrax.views.interfaces.IAppMediator;
 	
 	import org.robotlegs.core.IMediator;
@@ -32,6 +34,8 @@ package com.soatech.spelltrax.views
 		override public function onRegister():void
 		{
 			super.onRegister();
+			
+			addContextListener(DataBaseEvent.CONNECTED, db_connectedHandler);
 		}
 		
 		//---------------------------------------------------------------------
@@ -67,6 +71,16 @@ package com.soatech.spelltrax.views
 		override public function book_newHandler(event:SpellBookEvent):void
 		{
 			view.navigator.pushView( SpellBookEdit, event.spellBook );
+		}
+		
+		/**
+		 * 
+		 * @param event
+		 * 
+		 */
+		protected function db_connectedHandler(event:DataBaseEvent):void
+		{
+			view.navigator.pushView(SpellBookSelect);
 		}
 	}
 }

@@ -3,9 +3,12 @@ package com.soatech.spelltrax
 	import com.soatech.spelltrax.commands.AppInitCommand;
 	import com.soatech.spelltrax.commands.DatabaseConnectCommand;
 	import com.soatech.spelltrax.commands.MigrationsBuildCommand;
+	import com.soatech.spelltrax.db.Migrator;
 	import com.soatech.spelltrax.events.AppEvent;
 	import com.soatech.spelltrax.events.DataBaseEvent;
 	import com.soatech.spelltrax.events.MigrationEvent;
+	import com.soatech.spelltrax.helpers.ELSHelper;
+	import com.soatech.spelltrax.models.DataBaseProxy;
 	import com.soatech.spelltrax.services.SpellBookService;
 	import com.soatech.spelltrax.services.SpellService;
 	import com.soatech.spelltrax.services.interfaces.ISpellBookService;
@@ -48,6 +51,9 @@ package com.soatech.spelltrax
 			super.startup();
 			
 			// model
+			injector.mapSingleton( DataBaseProxy );
+			injector.mapSingleton( ELSHelper );
+			injector.mapSingleton( Migrator );
 			
 			// commands
 			commandMap.mapEvent( AppEvent.INIT, AppInitCommand );
@@ -62,6 +68,8 @@ package com.soatech.spelltrax
 			mediatorMap.mapView( Mobile, AppMediator );
 			mediatorMap.mapView( SpellBookEdit, SpellBookEditMediator );
 			mediatorMap.mapView( SpellBookSelect, SpellBookSelectMediator );
+			
+			dispatchEvent( new AppEvent( AppEvent.INIT ) );
 		}
 	}
 }

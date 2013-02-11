@@ -97,7 +97,9 @@ package com.soatech.spelltrax.db
 		 */		
 		protected function determineVersion():void
 		{
-			_dbi.execute(SQL_SELECT_VERSION, {}, onSelectVersionResult, null, onSelectVersionFault);
+			var sb:Vector.<QueuedStatement> = new Vector.<QueuedStatement>();
+			sb.push(new QueuedStatement(SQL_SELECT_VERSION));
+			_dbi.executeModify(sb, onSelectVersionResult, onSelectVersionFault);
 		}
 		
 		/**
@@ -165,12 +167,12 @@ package com.soatech.spelltrax.db
 		 * @param data
 		 * 
 		 */
-		public function onSelectVersionResult(result:SQLResult):void
+		public function onSelectVersionResult(results:Vector.<SQLResult>):void
 		{
-			if( !result.data || !result.data.length )
+			if( !results[0].data || !results[0].data.length )
 				_currentVersion = 0;
 			else
-				_currentVersion = int(result.data[0]['currentVersion']);
+				_currentVersion = int(results[0].data[0]['currentVersion']);
 			
 			runMigrations();
 		}

@@ -52,6 +52,7 @@ package com.soatech.spelltrax.commands
 			
 			migration = new Migration();
 			migration.version = ++version;
+			migration.queries = new Vector.<String>();
 			
 			// spellBooks
 			migration.queries.push("CREATE TABLE spellBooks ( pid integer primary key autoincrement, " +
