@@ -13,6 +13,11 @@
 			{
 				return this._addBtn;
 			}
+
+            public function get backBtn():Button
+            {
+                return this._backBtn;
+            }
 			
 			public function get spellList():List
 			{
@@ -20,7 +25,11 @@
 			}
 		]]>
 	</fx:Script>
-	
+
+    <s:navigationContent>
+        <s:Button id="_backBtn" label="Add Book" />
+    </s:navigationContent>
+
 	<s:actionContent>
 		<s:Button id="_addBtn" label="Add Spell" />
 	</s:actionContent>

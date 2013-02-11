@@ -18,6 +18,7 @@ package com.soatech.spelltrax.events
 		public static const EDIT:String = "SpellEvent.EDIT";
 		public static const LIST_CHANGED:String = "SpellEvent.LIST_CHANGED";
 		public static const LOAD:String = "SpellEvent.LOAD";
+        public static const NEW_SPELL:String = "SpellEvent.NEW_SPELL";
 		public static const SAVE:String = "SpellEvent.SAVE";
 		public static const SELECT:String = "SpellEvent.SELECT";
 		public static const TOGGLE_USE:String = "SpellEvent.USE";
@@ -36,7 +37,15 @@ package com.soatech.spelltrax.events
 		// Constructor
 		//
 		//---------------------------------------------------------------------
-		
+
+        /**
+         *
+         * @param type
+         * @param spell
+         * @param spellList
+         * @param bubbles
+         * @param cancelable
+         */
 		public function SpellEvent(type:String, spell:Spell=null, 
 								   spellList:ArrayCollection=null, 
 								   bubbles:Boolean=false, cancelable:Boolean=false)

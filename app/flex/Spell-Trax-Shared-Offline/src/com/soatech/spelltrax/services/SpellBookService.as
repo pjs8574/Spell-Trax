@@ -46,6 +46,8 @@ package com.soatech.spelltrax.services
         protected const SQL_UPDATE:String = "UPDATE spellBooks SET name = :name WHERE pid = :pid";
 
         protected const SQL_DELETE:String = "DELETE FROM spellBooks WHERE pid = :pid";
+
+        protected const SQL_DELETE_SPELLS:String = "DELETE from spellBookSpells WHERE spellBookId = :spellBookId";
 		
 		//---------------------------------------------------------------------
 		//
@@ -92,6 +94,7 @@ package com.soatech.spelltrax.services
             this._responder = responder;
 
             var sb:Vector.<QueuedStatement> = new Vector.<QueuedStatement>();
+            sb.push(new QueuedStatement(SQL_DELETE_SPELLS, {spellBookId: book.pid}));
             sb.push(new QueuedStatement(SQL_DELETE, {pid: book.pid}));
             dbProxy.applicationDb.executeModify(sb, this.delete_resultHandler, this.delete_errorHandler);
         }

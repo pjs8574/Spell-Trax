@@ -13,7 +13,8 @@ package com.soatech.spelltrax.events
 		// Events
 		//
 		//---------------------------------------------------------------------
-		
+
+        public static const ADD_SPELL:String = "SpellBookEvent.ADD_SPELL";
 		public static const CREATE:String = "SpellBookEvent.CREATE";
 		public static const CREATE_SUCCESS:String = "SpellBookEvent.CREATE_SUCCESS";
         public static const DELETE:String = "SpellBookEvent.DELETE";

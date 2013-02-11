@@ -12,19 +12,19 @@
 			{
 				return this._addBtn;
 			}
-			
+
 			public function get bookList():List
 			{
 				return this._bookList;
 			}
 		]]>
 	</fx:Script>
-	
-	<s:actionContent>
-		<s:Button id="_addBtn" label="Add Book" />
-	</s:actionContent>
-	
-	<s:List id="_bookList" top="10" bottom="10" left="10" right="10" 
+
+    <s:actionContent>
+        <s:Button id="_addBtn" label="Add Book" />
+    </s:actionContent>
+
+    <s:List id="_bookList" top="10" bottom="10" left="10" right="10"
 			labelField="name" borderVisible="true"/>
 	
 </s:View>

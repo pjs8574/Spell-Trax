@@ -64,6 +64,8 @@ package com.soatech.spelltrax.views
 		//---------------------------------------------------------------------
 		
 		protected var nameValidator:StringValidator;
+
+        protected var _awaitingCreate:Boolean;
 		
 		//---------------------------------------------------------------------
 		//
@@ -198,6 +200,14 @@ package com.soatech.spelltrax.views
 		 */		
 		public function addBtn_clickHandler(event:MouseEvent):void
 		{
+            // needs to be saved before we start adding spells.
+            if( !book.pid )
+            {
+                this._awaitingCreate = true;
+                dispatch(new SpellBookEvent(SpellBookEvent.CREATE, book));
+            } else {
+                dispatch(new SpellBookEvent(SpellBookEvent.ADD_SPELL));
+            }
 		}
 		
 		/**
@@ -218,6 +228,10 @@ package com.soatech.spelltrax.views
 		public function book_createSuccessHandler(event:SpellBookEvent):void
 		{
 			this.book_saveSuccessHandler(event);
+
+            if( this._awaitingCreate ) {
+                this.addBtn_clickHandler(null);
+            }
 		}
 
         /**

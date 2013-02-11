@@ -6,6 +6,7 @@ package com.soatech.spelltrax.views.interfaces
 	public interface ISpellSelect
 	{
 		function get addBtn():Button;
+        function get backBtn():Button;
 		function get spellList():List;
 	}
 }
