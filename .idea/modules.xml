@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/Spell-Trax-Core.iml" filepath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/Spell-Trax-Core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/flex/Spell-Trax-Desktop/Spell-Trax-Desktop.iml" filepath="$PROJECT_DIR$/app/flex/Spell-Trax-Desktop/Spell-Trax-Desktop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/Spell-Trax-Mobile.iml" filepath="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/Spell-Trax-Mobile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/Spell-Trax-Shared-Offline.iml" filepath="$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/Spell-Trax-Shared-Offline.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/flex/Spell-Trax-Tablet/Spell-Trax-Tablet.iml" filepath="$PROJECT_DIR$/app/flex/Spell-Trax-Tablet/Spell-Trax-Tablet.iml" />
+    </modules>
+  </component>
+</project>
+
