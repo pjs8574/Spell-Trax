@@ -15,7 +15,7 @@ package com.soatech.spelltrax.models.vo
 		public var level:uint;
 		public var name:String;
 		public var notes:String;
-		public var pid:uint;
+		public var pid:Number;
 		public var used:Boolean;
 		
 		//---------------------------------------------------------------------
@@ -34,7 +34,7 @@ package com.soatech.spelltrax.models.vo
 		 * @param notes
 		 * 
 		 */		
-		public function Spell(pid:uint=0, name:String=null, level:uint=0, 
+		public function Spell(pid:Number=0, name:String=null, level:uint=0, 
 							  isDomain:Boolean=false, description:String=null, 
 							  notes:String=null, used:Boolean=false)
 		{
@@ -85,7 +85,7 @@ package com.soatech.spelltrax.models.vo
 		public function loadFromObject(item:Object):void
 		{
 			if( item.hasOwnProperty('pid') )
-				this.pid = uint(item['pid']);
+				this.pid = Number(item['pid']);
 			
 			if( item.hasOwnProperty('name') )
 				this.name = item['name'];
@@ -94,7 +94,7 @@ package com.soatech.spelltrax.models.vo
 				this.level = uint(item['level']);
 			
 			if( item.hasOwnProperty('isDomain') )
-				this.isDomain = (item['isDomain'] === 'true') ? true : false;
+				this.isDomain = Boolean(item['isDomain']);
 			
 			if( item.hasOwnProperty('description') )
 				this.description = item['description'];
@@ -103,7 +103,7 @@ package com.soatech.spelltrax.models.vo
 				this.notes = item['notes'];
 			
 			if( item.hasOwnProperty('used') )
-				this.used = (item['used'] === 'true') ? true : false;
+				this.used = Boolean(item['used']);
 		}
 	}
 }

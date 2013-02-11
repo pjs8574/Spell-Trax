@@ -11,7 +11,7 @@ package com.soatech.spelltrax.models.vo
 		//---------------------------------------------------------------------
 		
 		public var name:String;
-		public var pid:uint;
+		public var pid:Number;
 		
 		//---------------------------------------------------------------------
 		//
@@ -25,7 +25,7 @@ package com.soatech.spelltrax.models.vo
 		 * @param name
 		 * 
 		 */		
-		public function SpellBook(pid:uint=0, name:String=null)
+		public function SpellBook(pid:Number=0, name:String=null)
 		{
 			this.pid = pid;
 			this.name = name;
@@ -69,7 +69,7 @@ package com.soatech.spelltrax.models.vo
 		public function loadFromObject(item:Object):void
 		{
 			if( item.hasOwnProperty('pid') )
-				this.pid = uint(item['pid']);
+				this.pid = Number(item['pid']);
 			
 			if( item.hasOwnProperty('name') )
 				this.name = item['name'];

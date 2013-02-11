@@ -1,5 +1,11 @@
 package com.soatech.spelltrax
 {
+	import com.soatech.spelltrax.commands.AppInitCommand;
+	import com.soatech.spelltrax.commands.DatabaseConnectCommand;
+	import com.soatech.spelltrax.commands.MigrationsBuildCommand;
+	import com.soatech.spelltrax.events.AppEvent;
+	import com.soatech.spelltrax.events.DataBaseEvent;
+	import com.soatech.spelltrax.events.MigrationEvent;
 	import com.soatech.spelltrax.services.SpellBookService;
 	import com.soatech.spelltrax.services.SpellService;
 	import com.soatech.spelltrax.services.interfaces.ISpellBookService;
@@ -44,6 +50,9 @@ package com.soatech.spelltrax
 			// model
 			
 			// commands
+			commandMap.mapEvent( AppEvent.INIT, AppInitCommand );
+			commandMap.mapEvent( DataBaseEvent.CONNECT, DatabaseConnectCommand );
+			commandMap.mapEvent( MigrationEvent.BUILD, MigrationsBuildCommand );
 			
 			// services
 			injector.mapClass( ISpellBookService, SpellBookService );
