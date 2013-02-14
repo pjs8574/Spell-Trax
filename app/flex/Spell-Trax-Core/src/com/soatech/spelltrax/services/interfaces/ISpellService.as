@@ -10,6 +10,7 @@ package com.soatech.spelltrax.services.interfaces
 		function create(spell:Spell, responder:IResponder):void;
 		function load(responder:IResponder):void;
 		function loadByBook(book:SpellBook, responder:IResponder):void;
+        function remove(spell:Spell, responder:IResponder):void;
         function save(spell:Spell,  responder:IResponder):void;
 	}
 }

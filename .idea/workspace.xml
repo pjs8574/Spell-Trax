@@ -2,30 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15163a66-70e8-4bca-902c-7c4c6b512a21" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/renderers/SpellEditRenderer.mxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/AppMediator.as" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/AppMediator.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/AppMediatorBase.as" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/AppMediatorBase.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/interfaces/IAppMediator.as" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/interfaces/IAppMediator.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/interfaces/ISpellSelectMediator.as" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/interfaces/ISpellSelectMediator.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellEditMediatorBase.as" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellEditMediatorBase.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/components/SpellSelect.mxml" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/components/SpellSelect.mxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellSelectMediatorBase.as" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellSelectMediatorBase.as" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellDeleteCommand.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/CoreContext.as" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/CoreContext.as" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/services/interfaces/ISpellService.as" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/services/interfaces/ISpellService.as" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/src/com/soatech/spelltrax/services/SpellService.as" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/src/com/soatech/spelltrax/services/SpellService.as" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/renderers/SpellToggleRenderer.mxml" afterPath="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/renderers/SpellToggleRenderer.mxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Spell-Trax.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/fragment.js2" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360801796658" ignored="false" />
+    <file path="/fragment.js2" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360802950117" ignored="false" />
     <file path="/SpellSelect.mxml" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360801924697" ignored="false" />
     <file path="/SpellBookEditMediatorBase.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360798562535" ignored="false" />
-    <file path="/ISpellService.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360711003436" ignored="false" />
-    <file path="/SpellService.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360711316789" ignored="false" />
+    <file path="/ISpellService.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360802728557" ignored="false" />
+    <file path="/SpellService.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360802922679" ignored="false" />
     <file path="/SpellBookService.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360800418681" ignored="false" />
     <file path="/SpellCreateCommand.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360711746620" ignored="false" />
     <file path="/SpellEvent.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360794581068" ignored="false" />
     <file path="/SpellSavecommand.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360711891360" ignored="false" />
-    <file path="/CoreContext.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360798374206" ignored="false" />
+    <file path="/CoreContext.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360803112816" ignored="false" />
     <file path="/SpellEdit.mxml" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360796106902" ignored="false" />
     <file path="/ISpellEdit.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360795009900" ignored="false" />
     <file path="/ISpellEditMediator.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360794654708" ignored="false" />
@@ -46,6 +40,7 @@
     <file path="/Dummy.txt" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360800185706" ignored="false" />
     <file path="/SpellToggleRenderer.mxml" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360802061864" ignored="false" />
     <file path="/SpellEditRenderer.mxml" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360802543838" ignored="false" />
+    <file path="/SpellDeleteCommand.as" changelist="15163a66-70e8-4bca-902c-7c4c6b512a21" time="1360803070491" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,49 +101,14 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf>
-          <file leaf-file-name="SpellCreateCommand.as" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellCreateCommand.as">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="35" column="0" selection-start="987" selection-end="987" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SpellBookLinkSpellCommand.as" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellBookLinkSpellCommand.as">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="58" column="0" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="SpellSelect.mxml" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/components/SpellSelect.mxml">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="38" column="81" selection-start="1033" selection-end="1033" vertical-scroll-proportion="-15.25">
+                <state line="32" column="20" selection-start="772" selection-end="772" vertical-scroll-proportion="-11.5">
                   <folding>
                     <marker date="1360801926000" expanded="true" signature="402:433" placeholder="{...}" />
                     <marker date="1360801926000" expanded="true" signature="496:549" placeholder="{...}" />
                     <marker date="1360801926000" expanded="true" signature="597:631" placeholder="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SpellBookEdit.mxml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/components/SpellBookEdit.mxml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="34.666668">
-                  <folding>
-                    <marker date="1360469188000" expanded="true" signature="510:541" placeholder="{...}" />
-                    <marker date="1360469188000" expanded="true" signature="589:621" placeholder="{...}" />
-                    <marker date="1360469188000" expanded="true" signature="671:705" placeholder="{...}" />
-                    <marker date="1360469188000" expanded="true" signature="758:792" placeholder="{...}" />
-                    <marker date="1360469188000" expanded="true" signature="843:878" placeholder="{...}" />
-                    <marker date="1360469188000" expanded="true" signature="926:958" placeholder="{...}" />
-                    <marker date="1360469188000" expanded="true" signature="1006:1040" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -169,8 +129,30 @@
           <file leaf-file-name="SpellService.as" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/src/com/soatech/spelltrax/services/SpellService.as">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="53" column="63" selection-start="1745" selection-end="1745" vertical-scroll-proportion="0.0">
+                <state line="194" column="46" selection-start="5874" selection-end="5874" vertical-scroll-proportion="0.0">
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SpellDeleteCommand.as" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellDeleteCommand.as">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="60" column="53" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="e#41#88#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CoreContext.as" pinned="false" current="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/CoreContext.as">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="67" column="73" selection-start="2578" selection-end="2578" vertical-scroll-proportion="0.8148893">
+                  <folding>
+                    <element signature="e#32#93#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -222,12 +204,23 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ISpellSelectMediator.as" pinned="false" current="true" current-in-tab="true">
+          <file leaf-file-name="ISpellSelectMediator.as" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/interfaces/ISpellSelectMediator.as">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="70" selection-start="633" selection-end="633" vertical-scroll-proportion="0.38235295">
+                <state line="13" column="70" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
                   <folding>
                     <element signature="e#49#103#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ISpellService.as" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/services/interfaces/ISpellService.as">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="12" column="64" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="e#53#98#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -237,15 +230,6 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="SpellBookEditMediator.as" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/SpellBookEditMediator.as">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="56" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="SpellBookEditMediatorBase.as" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellBookEditMediatorBase.as">
               <provider selected="true" editor-type-id="text-editor">
@@ -255,19 +239,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="SpellSaveCommand.as" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellSaveCommand.as">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="35" column="0" selection-start="985" selection-end="985" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="SpellEditMediatorBase.as" pinned="false" current="false" current-in-tab="true">
+          <file leaf-file-name="SpellEditMediatorBase.as" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellEditMediatorBase.as">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="175" column="0" selection-start="4797" selection-end="4797" vertical-scroll-proportion="0.33199194">
+                <state line="215" column="0" selection-start="5762" selection-end="5762" vertical-scroll-proportion="0.33544305">
                   <folding />
                 </state>
               </provider>
@@ -327,6 +302,26 @@
               </provider>
             </entry>
           </file>
+          <file leaf-file-name="SpellBookService.as" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/src/com/soatech/spelltrax/services/SpellBookService.as">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="186" column="30" selection-start="5592" selection-end="5592" vertical-scroll-proportion="0.0">
+                  <folding>
+                    <element signature="e#41#84#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="SpellBookDeleteCommand.as" pinned="false" current="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellBookDeleteCommand.as">
+              <provider selected="true" editor-type-id="text-editor">
+                <state line="53" column="5" selection-start="780" selection-end="1618" vertical-scroll-proportion="0.0">
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-second>
     </splitter>
@@ -347,9 +342,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/services/interfaces/ISpellBookService.as" />
-        <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/CoreContext.as" />
-        <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellBookEditMediatorBase.as" />
         <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellBookLinkSpellCommand.as" />
         <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/src/com/soatech/spelltrax/commands/MigrationsBuildCommand.as" />
         <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/src/com/soatech/spelltrax/services/SpellBookService.as" />
@@ -357,12 +349,15 @@
         <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/AppMediatorBase.as" />
         <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/AppMediator.as" />
         <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellEditMediatorBase.as" />
-        <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/src/com/soatech/spelltrax/services/SpellService.as" />
         <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/components/SpellSelect.mxml" />
         <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/renderers/SpellToggleRenderer.mxml" />
         <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/renderers/SpellEditRenderer.mxml" />
         <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellSelectMediatorBase.as" />
         <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/interfaces/ISpellSelectMediator.as" />
+        <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/services/interfaces/ISpellService.as" />
+        <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/src/com/soatech/spelltrax/services/SpellService.as" />
+        <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellDeleteCommand.as" />
+        <option value="$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/CoreContext.as" />
       </list>
     </option>
   </component>
@@ -879,8 +874,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateActionScriptClassDialog.DESTINATION_PACKAGE_RECENT_KEY">
-      <recent name="com.soatech.spelltrax.views.renderers" />
       <recent name="com.soatech.spelltrax.commands" />
+      <recent name="com.soatech.spelltrax.views.renderers" />
       <recent name="com.soatech.spelltrax.views" />
       <recent name="com.soatech.spelltrax.views.interfaces" />
       <recent name="com.soatech.spelltrax.views.components" />
@@ -1153,118 +1148,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/components/SpellSelect.mxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="81" selection-start="1033" selection-end="1033" vertical-scroll-proportion="-15.25">
-          <folding>
-            <marker date="1360801926000" expanded="true" signature="402:433" placeholder="{...}" />
-            <marker date="1360801926000" expanded="true" signature="496:549" placeholder="{...}" />
-            <marker date="1360801926000" expanded="true" signature="597:631" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellBookLinkSpellCommand.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="0" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellBooksLoadCommand.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellBookLoadSpellsCommand.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="0" selection-start="1083" selection-end="1083" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/SpellBookSelectMediator.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="58" selection-start="272" selection-end="272" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/models/SpellBooksProxy.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="41" selection-start="933" selection-end="933" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellBookSelectMediatorBase.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="32" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/SpellBookEditMediator.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="56" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/components/SpellBookSelect.mxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="2.25">
-          <folding>
-            <marker date="1360706149000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1360706149000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/renderers/SpellToggleRenderer.mxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="116" column="10" selection-start="3442" selection-end="3676" vertical-scroll-proportion="-9.041667">
-          <folding>
-            <marker date="1360802211000" expanded="true" signature="323:555" placeholder="..." />
-            <marker date="1360802211000" expanded="true" signature="565:751" placeholder="//..." />
-            <marker date="1360802211000" expanded="true" signature="924:974" placeholder="{...}" />
-            <marker date="1360802211000" expanded="true" signature="984:1179" placeholder="//..." />
-            <marker date="1360802211000" expanded="true" signature="1239:2077" placeholder="{...}" />
-            <marker date="1360802211000" expanded="true" signature="1303:1604" placeholder="{...}" />
-            <marker date="1360802211000" expanded="true" signature="1632:2067" placeholder="{...}" />
-            <marker date="1360802211000" expanded="true" signature="2140:2244" placeholder="{...}" />
-            <marker date="1360802211000" expanded="true" signature="2350:2522" placeholder="{...}" />
-            <marker date="1360802211000" expanded="true" signature="2445:2512" placeholder="{...}" />
-            <marker date="1360802211000" expanded="true" signature="2532:2716" placeholder="//..." />
-            <marker date="1360802211000" expanded="true" signature="2761:2814" placeholder="{...}" />
-            <marker date="1360802211000" expanded="true" signature="2877:3212" placeholder="{...}" />
-            <marker date="1360802211000" expanded="true" signature="3222:3413" placeholder="//..." />
-            <marker date="1360802211000" expanded="true" signature="3487:3676" placeholder="{...}" />
-            <marker date="1360802211000" expanded="true" signature="3748:3972" placeholder="{...}" />
-            <marker date="1360802211000" expanded="true" signature="4053:4236" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/renderers/SpellEditRenderer.mxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="48" selection-start="566" selection-end="566" vertical-scroll-proportion="-9.375">
-          <folding>
-            <marker date="1360802544000" expanded="true" signature="342:433" placeholder="{...}" />
-            <marker date="1360802544000" expanded="true" signature="516:614" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/SpellSelectMediator.as">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="56" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellSelectMediatorBase.as">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="78" selection-start="745" selection-end="745" vertical-scroll-proportion="0.0">
@@ -1281,19 +1164,123 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellEditMediatorBase.as">
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/interfaces/ISpellSelectMediator.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="175" column="0" selection-start="4797" selection-end="4797" vertical-scroll-proportion="0.33199194">
+        <state line="13" column="70" selection-start="633" selection-end="633" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#49#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellCreateCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="987" selection-end="987" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/interfaces/ISpellSelectMediator.as">
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/services/interfaces/ISpellService.as">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="70" selection-start="633" selection-end="633" vertical-scroll-proportion="0.38235295">
+        <state line="12" column="64" selection-start="448" selection-end="448" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#49#103#0" expanded="true" />
+            <element signature="e#53#98#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellBookLinkSpellCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="0" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellSaveCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="0" selection-start="985" selection-end="985" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/src/com/soatech/spelltrax/services/SpellService.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="46" selection-start="5874" selection-end="5874" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Shared-Offline/src/com/soatech/spelltrax/services/SpellBookService.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="186" column="30" selection-start="5592" selection-end="5592" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#41#84#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/components/SpellBookEdit.mxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="34.666668">
+          <folding>
+            <marker date="1360469188000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1360469188000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1360469188000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1360469188000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1360469188000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1360469188000" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1360469188000" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/SpellBookEditMediator.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="56" selection-start="317" selection-end="317" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Mobile/src/com/soatech/spelltrax/views/components/SpellSelect.mxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="20" selection-start="772" selection-end="772" vertical-scroll-proportion="-11.5">
+          <folding>
+            <marker date="1360801926000" expanded="true" signature="402:433" placeholder="{...}" />
+            <marker date="1360801926000" expanded="true" signature="496:549" placeholder="{...}" />
+            <marker date="1360801926000" expanded="true" signature="597:631" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellDeleteCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="53" selection-start="1597" selection-end="1597" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#41#88#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/commands/SpellBookDeleteCommand.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="5" selection-start="780" selection-end="1618" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/CoreContext.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="73" selection-start="2578" selection-end="2578" vertical-scroll-proportion="0.8148893">
+          <folding>
+            <element signature="e#32#93#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/flex/Spell-Trax-Core/src/com/soatech/spelltrax/views/SpellEditMediatorBase.as">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="215" column="0" selection-start="5762" selection-end="5762" vertical-scroll-proportion="0.33544305">
+          <folding />
         </state>
       </provider>
     </entry>

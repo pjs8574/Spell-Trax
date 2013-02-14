@@ -54,6 +54,10 @@ package com.soatech.spelltrax.services
         protected const SQL_UPDATE:String = "UPDATE spells SET description = :description, " +
                 "isDomain = :isDomain, level = :level, name = :name, notes = :notes " +
                 "WHERE pid = :pid";
+
+        protected const SQL_DELETE:String = "DELETE FROM spells WHERE pid = :pid";
+
+        protected const SQL_DELETE_FROM_BOOKS:String = "DELETE FROM spellBookSpells WHERE spellId = :spellId";
 		
 		//---------------------------------------------------------------------
 		//
@@ -107,6 +111,22 @@ package com.soatech.spelltrax.services
 
         /**
          *
+         * @param spell
+         * @param responder
+         */
+        public function remove(spell:Spell, responder:IResponder):void
+        {
+            this._spell = spell;
+            this._responder = responder;
+
+            var sb:Vector.<QueuedStatement> = new Vector.<QueuedStatement>();
+            sb.push(new QueuedStatement(SQL_DELETE_FROM_BOOKS, {spellId: spell.pid}));
+            sb.push(new QueuedStatement(SQL_DELETE, {pid: spell.pid}));
+            dbProxy.applicationDb.executeModify(sb, this.delete_resultHandler, this.delete_errorHandler);
+        }
+
+        /**
+         *
          * @param book
          * @param responder
          */
@@ -155,6 +175,25 @@ package com.soatech.spelltrax.services
 			
 			this._responder.result(results);
 		}
+
+        /**
+         *
+         * @param error
+         */
+        protected function delete_errorHandler(error:SQLError):void
+        {
+            CONFIG::debugtrace{ trace("SpellBookService::delete_errorHandler: " + error.toString()); }
+            this._responder.fault(error);
+        }
+
+        /**
+         *
+         * @param results
+         */
+        protected function delete_resultHandler(results:Vector.<SQLResult>):void
+        {
+            this._responder.result(this._spell);
+        }
 		
 		/**
 		 * 

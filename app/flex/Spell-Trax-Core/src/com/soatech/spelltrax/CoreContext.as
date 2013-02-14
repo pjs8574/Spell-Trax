@@ -7,6 +7,7 @@ import com.soatech.spelltrax.commands.SpellBookLoadSpellsCommand;
 import com.soatech.spelltrax.commands.SpellBookSaveCommand;
 import com.soatech.spelltrax.commands.SpellBooksLoadCommand;
 import com.soatech.spelltrax.commands.SpellCreateCommand;
+import com.soatech.spelltrax.commands.SpellDeleteCommand;
 import com.soatech.spelltrax.commands.SpellSaveCommand;
 import com.soatech.spelltrax.commands.SpellsLoadCommand;
 	import com.soatech.spelltrax.events.SpellBookEvent;
@@ -64,6 +65,7 @@ import com.soatech.spelltrax.commands.SpellsLoadCommand;
             commandMap.mapEvent( SpellEvent.CREATE, SpellCreateCommand );
 			commandMap.mapEvent( SpellEvent.LOAD, SpellsLoadCommand );
             commandMap.mapEvent( SpellEvent.SAVE, SpellSaveCommand );
+            commandMap.mapEvent( SpellEvent.DELETE, SpellDeleteCommand );
 		}
 	}
 }
