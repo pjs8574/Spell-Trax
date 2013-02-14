@@ -16,9 +16,11 @@ package com.soatech.spelltrax
 	import com.soatech.spelltrax.views.AppMediator;
 	import com.soatech.spelltrax.views.SpellBookEditMediator;
 	import com.soatech.spelltrax.views.SpellBookSelectMediator;
+import com.soatech.spelltrax.views.SpellEditMediator;
 import com.soatech.spelltrax.views.SpellSelectMediator;
 import com.soatech.spelltrax.views.components.SpellBookEdit;
 	import com.soatech.spelltrax.views.components.SpellBookSelect;
+import com.soatech.spelltrax.views.components.SpellEdit;
 import com.soatech.spelltrax.views.components.SpellSelect;
 
 import flash.display.DisplayObjectContainer;
@@ -70,6 +72,7 @@ import flash.display.DisplayObjectContainer;
 			mediatorMap.mapView( Mobile, AppMediator );
 			mediatorMap.mapView( SpellBookEdit, SpellBookEditMediator );
 			mediatorMap.mapView( SpellBookSelect, SpellBookSelectMediator );
+            mediatorMap.mapView( SpellEdit, SpellEditMediator );
             mediatorMap.mapView( SpellSelect, SpellSelectMediator );
 			
 			dispatchEvent( new AppEvent( AppEvent.INIT ) );

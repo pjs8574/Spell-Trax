@@ -1,8 +1,10 @@
 package com.soatech.spelltrax.views {
 import com.soatech.spelltrax.events.NavigationEvent;
+import com.soatech.spelltrax.events.SpellBookEvent;
 import com.soatech.spelltrax.events.SpellEvent;
 import com.soatech.spelltrax.models.SpellsProxy;
 import com.soatech.spelltrax.models.vo.Spell;
+import com.soatech.spelltrax.models.vo.SpellBook;
 import com.soatech.spelltrax.views.interfaces.ISpellSelect;
 import com.soatech.spelltrax.views.interfaces.ISpellSelectMediator;
 
@@ -25,6 +27,22 @@ public class SpellSelectMediatorBase extends Mediator implements ISpellSelectMed
     [Inject]
     public var spellsProxy:SpellsProxy;
 
+    //-----------------------------
+    // book
+    //-----------------------------
+
+    private var _book:SpellBook;
+
+    public function get book():SpellBook
+    {
+        return _book;
+    }
+
+    public function set book(value:SpellBook):void
+    {
+        _book = value;
+    }
+
     //---------------------------------
     // view
     //---------------------------------
@@ -45,11 +63,13 @@ public class SpellSelectMediatorBase extends Mediator implements ISpellSelectMed
         super.onRegister();
 
         // context events
+        addContextListener( SpellBookEvent.LINK_SPELL_SUCCESS, this.book_linkSpellSuccessHandler );
         addContextListener( SpellEvent.LIST_CHANGED, this.spells_listChangedHandler );
 
         // view events
         eventMap.mapListener( view.addBtn, MouseEvent.CLICK, this.addBtn_clickHandler );
         eventMap.mapListener( view.backBtn, MouseEvent.CLICK, this.backBtn_clickHandler );
+        eventMap.mapListener( view.spellList, IndexChangeEvent.CHANGE, this.spellList_changeHandler );
 
         this.setup();
     }
@@ -84,18 +104,39 @@ public class SpellSelectMediatorBase extends Mediator implements ISpellSelectMed
         dispatch(new SpellEvent(SpellEvent.NEW_SPELL, new Spell()));
     }
 
+    /**
+     *
+     * @param event
+     */
     public function backBtn_clickHandler(event:MouseEvent):void {
         dispatch(new NavigationEvent(NavigationEvent.BACK));
     }
 
+    /**
+     *
+     * @param event
+     */
+    public function book_linkSpellSuccessHandler(event:SpellBookEvent):void {
+        this.backBtn_clickHandler(null);
+    }
+
+    /**
+     *
+     * @param event
+     */
     public function spells_listChangedHandler(event:SpellEvent):void {
         this.populate();
     }
 
+    /**
+     *
+     * @param event
+     */
     public function spellList_changeHandler(event:IndexChangeEvent):void {
-        // if we came from a spell book,
-        // then link the spell to the book
-        // then close view
+        var spell:Spell = view.spellList.dataProvider.getItemAt(event.newIndex) as Spell;
+
+        if( spell && spell.pid && book && book.pid )
+            dispatch(new SpellBookEvent(SpellBookEvent.LINK_SPELL,book,null,null,spell));
     }
 }
 }

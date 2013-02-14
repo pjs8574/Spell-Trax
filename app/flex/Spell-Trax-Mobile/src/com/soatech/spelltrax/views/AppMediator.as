@@ -3,8 +3,10 @@ package com.soatech.spelltrax.views
 	import com.soatech.spelltrax.events.DataBaseEvent;
 import com.soatech.spelltrax.events.NavigationEvent;
 import com.soatech.spelltrax.events.SpellBookEvent;
-	import com.soatech.spelltrax.views.components.SpellBookEdit;
+import com.soatech.spelltrax.events.SpellEvent;
+import com.soatech.spelltrax.views.components.SpellBookEdit;
 	import com.soatech.spelltrax.views.components.SpellBookSelect;
+import com.soatech.spelltrax.views.components.SpellEdit;
 import com.soatech.spelltrax.views.components.SpellSelect;
 import com.soatech.spelltrax.views.interfaces.IAppMediator;
 	
@@ -51,7 +53,7 @@ import com.soatech.spelltrax.views.interfaces.IAppMediator;
          * @param event
          */
         override public function book_addSpellHandler(event:SpellBookEvent):void {
-            view.navigator.pushView( SpellSelect );
+            view.navigator.pushView( SpellSelect, event.spellBook );
         }
 
 		/**
@@ -100,6 +102,11 @@ import com.soatech.spelltrax.views.interfaces.IAppMediator;
         override public function navigation_backHandler(event:NavigationEvent):void
         {
             view.navigator.popView();
+        }
+
+        override public function spell_newHandler(event:SpellEvent):void
+        {
+            view.navigator.pushView(SpellEdit, event.spell);
         }
 	}
 }

@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<s:View xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark"
+        implements="com.soatech.spelltrax.views.interfaces.ISpellEdit">
+
+    <s:layout>
+        <s:VerticalLayout paddingTop="10" paddingLeft="10" paddingBottom="10" paddingRight="10"/>
+    </s:layout>
+
+    <fx:Script><![CDATA[
+        public function get backBtn():Button {
+            return _backBtn;
+        }
+
+        public function get deleteBtn():Button {
+            return _deleteBtn;
+        }
+
+        public function get descTextArea():TextArea {
+            return _descTextArea;
+        }
+
+        public function get nameInput():TextInput {
+            return _nameInput;
+        }
+
+        public function get notesTextArea():TextArea {
+            return _notesTextArea;
+        }
+
+        public function get saveBtn():Button {
+            return _saveBtn;
+        }
+
+        public function get domainCheckBox():CheckBox {
+            return _domainCheckBox;
+        }
+
+        public function get levelInput():TextInput {
+            return _levelInput;
+        }
+        ]]></fx:Script>
+
+    <s:navigationContent>
+        <s:Button id="_backBtn" label="Back" />
+    </s:navigationContent>
+
+    <s:actionContent>
+        <s:CalloutButton id="_optionsCallout" label="..." verticalPosition="after"
+                         horizontalPosition="middle" calloutDestructionPolicy="never">
+            <s:calloutLayout>
+                <s:VerticalLayout paddingTop="10" paddingBottom="10"
+                                  paddingLeft="10" paddingRight="10"
+                                  horizontalAlign="center" gap="5"/>
+            </s:calloutLayout>
+            <s:calloutContent>
+                <s:Button id="_saveBtn" label="Save" width="100%" />
+                <s:Button id="_deleteBtn" label="Delete" width="100%" />
+            </s:calloutContent>
+        </s:CalloutButton>
+    </s:actionContent>
+
+    <s:TextInput id="_nameInput" prompt="Name"/>
+
+    <s:HGroup width="100%">
+        <s:Label text="Level:" />
+        <s:TextInput id="_levelInput" width="{_levelInput.height}" restrict="0-9" text="0" />
+
+        <s:Label text="Domain:" />
+        <s:CheckBox id="_domainCheckBox" />
+    </s:HGroup>
+
+    <s:TextArea id="_descTextArea" prompt="Description"
+            height="100" width="100%"/>
+
+    <s:TextArea id="_notesTextArea" prompt="Notes"
+            height="100%" width="100%"/>
+</s:View>

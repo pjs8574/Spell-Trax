@@ -27,7 +27,7 @@
 	</fx:Script>
 
     <s:navigationContent>
-        <s:Button id="_backBtn" label="Add Book" />
+        <s:Button id="_backBtn" label="Back" />
     </s:navigationContent>
 
 	<s:actionContent>

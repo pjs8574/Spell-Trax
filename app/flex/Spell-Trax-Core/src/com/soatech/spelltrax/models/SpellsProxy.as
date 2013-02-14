@@ -14,7 +14,25 @@ package com.soatech.spelltrax.models
 		// Properties
 		//
 		//---------------------------------------------------------------------
-		
+
+        //-----------------------------
+        // selectedSpell
+        //-----------------------------
+
+        private var _selectedSpell:Spell;
+
+        public function get selectedSpell():Spell
+        {
+            return this._selectedSpell;
+        }
+
+        public function set selectedSpell(value:Spell):void
+        {
+            this._selectedSpell = value;
+
+            dispatch(new SpellEvent(SpellEvent.SELECTED_CHANGED, value));
+        }
+
 		//-----------------------------
 		// spellList
 		//-----------------------------

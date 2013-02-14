@@ -200,14 +200,8 @@ package com.soatech.spelltrax.views
 		 */		
 		public function addBtn_clickHandler(event:MouseEvent):void
 		{
-            // needs to be saved before we start adding spells.
-            if( !book.pid )
-            {
-                this._awaitingCreate = true;
-                dispatch(new SpellBookEvent(SpellBookEvent.CREATE, book));
-            } else {
-                dispatch(new SpellBookEvent(SpellBookEvent.ADD_SPELL));
-            }
+            this._awaitingCreate = true;
+            this.saveBtn_clickHandler(null);
 		}
 		
 		/**
@@ -228,10 +222,6 @@ package com.soatech.spelltrax.views
 		public function book_createSuccessHandler(event:SpellBookEvent):void
 		{
 			this.book_saveSuccessHandler(event);
-
-            if( this._awaitingCreate ) {
-                this.addBtn_clickHandler(null);
-            }
 		}
 
         /**
@@ -251,8 +241,13 @@ package com.soatech.spelltrax.views
 		public function book_saveSuccessHandler(event:SpellBookEvent):void
 		{
 			this.book = event.spellBook;
-			
-			this.populate();
+
+            this.populate();
+
+            if( this._awaitingCreate ) {
+                this._awaitingCreate = false;
+                this.dispatch(new SpellBookEvent(SpellBookEvent.ADD_SPELL, book));
+            }
 		}
 		
 		/**
@@ -272,7 +267,7 @@ package com.soatech.spelltrax.views
          *
          * @param event
          */
-        protected function deleteBtn_clickHandler(event:MouseEvent):void
+        public function deleteBtn_clickHandler(event:MouseEvent):void
         {
             if( book.pid )
                 dispatch(new SpellBookEvent(SpellBookEvent.DELETE, book));

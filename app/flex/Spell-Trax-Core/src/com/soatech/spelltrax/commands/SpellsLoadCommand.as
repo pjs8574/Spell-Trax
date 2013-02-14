@@ -54,8 +54,7 @@ package com.soatech.spelltrax.commands
 		 */		
 		public function result(data:Object):void
 		{
-			if( !spellsProxy.spellList || !spellsProxy.spellList.length )
-				spellsProxy.spellList = data as ArrayCollection;
+			spellsProxy.spellList = data as ArrayCollection;
 		}
 		
 		/**

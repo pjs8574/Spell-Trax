@@ -2,7 +2,8 @@ package com.soatech.spelltrax.views
 {
 import com.soatech.spelltrax.events.NavigationEvent;
 import com.soatech.spelltrax.events.SpellBookEvent;
-    import com.soatech.spelltrax.views.interfaces.IAppMediator;
+import com.soatech.spelltrax.events.SpellEvent;
+import com.soatech.spelltrax.views.interfaces.IAppMediator;
 
     import org.robotlegs.core.IMediator;
     import org.robotlegs.mvcs.Mediator;
@@ -24,6 +25,7 @@ import com.soatech.spelltrax.events.SpellBookEvent;
             addContextListener( SpellBookEvent.EDIT, this.book_editHandler );
             addContextListener( SpellBookEvent.EDIT_BACK, this.book_editBackHandler );
             addContextListener( SpellBookEvent.NEW_BOOK, this.book_newHandler );
+            addContextListener( SpellEvent.NEW_SPELL, this.spell_newHandler );
         }
 
         //---------------------------------------------------------------------
@@ -72,6 +74,11 @@ import com.soatech.spelltrax.events.SpellBookEvent;
         public function navigation_backHandler(event:NavigationEvent):void
         {
             CONFIG::debugtrace{ trace("Not Yet Implemented: AppMediatorBase::navigation_backHandler" ); };
+        }
+
+        public function spell_newHandler(event:SpellEvent):void
+        {
+            CONFIG::debugtrace{ trace("Not Yet Implemented: AppMediatorBase::spell_newHandler" ); };
         }
     }
 }

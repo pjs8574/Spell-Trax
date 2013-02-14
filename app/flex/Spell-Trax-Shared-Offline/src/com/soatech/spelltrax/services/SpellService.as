@@ -42,14 +42,18 @@ package com.soatech.spelltrax.services
 		protected const SQL_SELECT_ALL:String = "SELECT pid, description, isDomain, " +
 			"level, name, notes FROM spells";
 		
-		protected const SQL_SELECT_ALL_BY_BOOK:String = "SELECT pid, description, " +
+		protected const SQL_SELECT_ALL_BY_BOOK:String = "SELECT s.pid, description, " +
 			"isDomain, level, name, notes, used FROM spells s " +
-			"INNER JOIN spellBookSpells sbs ON s.pid = sbs.spellBookId " +
+			"INNER JOIN spellBookSpells sbs ON s.pid = sbs.spellId " +
 			"AND sbs.spellBookId = :spellBookId";
 		
 		protected const SQL_INSERT:String = "INSERT INTO spells (description, " +
 			"isDomain, level, name, notes) VALUES (:description, :isDomain, :level, " +
 			":name, :notes)";
+
+        protected const SQL_UPDATE:String = "UPDATE spells SET (description = :description, " +
+                "isDomain = :isDomain, level = :level, name = :name, notes = :notes) " +
+                "WHERE pid = :pid";
 		
 		//---------------------------------------------------------------------
 		//
@@ -63,7 +67,13 @@ package com.soatech.spelltrax.services
 			this._spell = spell;
 			
 			var sb:Vector.<QueuedStatement> = new Vector.<QueuedStatement>();
-			sb.push(new QueuedStatement(SQL_INSERT, spell));
+			sb.push(new QueuedStatement(SQL_INSERT, {
+                description: spell.description,
+                isDomain: spell.isDomain,
+                level: spell.level,
+                name: spell.name,
+                notes: spell.notes
+            }));
 			dbProxy.applicationDb.executeModify(sb, this.create_resultHandler, 
 				this.create_errorHandler);
 		}
@@ -94,6 +104,29 @@ package com.soatech.spelltrax.services
 			dbProxy.applicationDb.execute(SQL_SELECT_ALL_BY_BOOK, {spellBookId: book.pid}, 
 				this.load_resultHandler, null, this.loadbyBook_errorHandler);
 		}
+
+        /**
+         *
+         * @param book
+         * @param responder
+         */
+        public function save(spell:Spell, responder:IResponder):void
+        {
+            this._responder = responder;
+            this._spell = spell;
+
+            var sb:Vector.<QueuedStatement> = new Vector.<QueuedStatement>();
+            sb.push(new QueuedStatement(SQL_UPDATE, {
+                description: spell.description,
+                isDomain: spell.isDomain,
+                level: spell.level,
+                name: spell.name,
+                notes: spell.notes,
+                pid: spell.pid
+            }));
+            dbProxy.applicationDb.executeModify(sb, this.save_resultHandler,
+                    this.save_errorHandler);
+        }
 		
 		//---------------------------------------------------------------------
 		//
@@ -160,5 +193,23 @@ package com.soatech.spelltrax.services
 			
 			this._responder.result(list);
 		}
-	}
+
+        /**
+         *
+         * @param error
+         */
+        protected function save_errorHandler(error:SQLError):void
+        {
+            CONFIG::debugtrace{ trace("SpellService::save_errorHandler: " + error.toString()); }
+        }
+
+        /**
+         *
+         * @param results
+         */
+        protected function save_resultHandler(results:Vector.<SQLResult>):void
+        {
+            this._responder.result(this._spell);
+        }
+    }
 }

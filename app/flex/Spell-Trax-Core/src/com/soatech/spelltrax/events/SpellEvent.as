@@ -15,12 +15,17 @@ package com.soatech.spelltrax.events
 		//---------------------------------------------------------------------
 		
 		public static const CREATE:String = "SpellEvent.CREATE";
+        public static const CREATE_SUCCESS:String = "SpellEvent.CREATE_SUCCESS";
 		public static const EDIT:String = "SpellEvent.EDIT";
+        public static const DELETE:String = "SpellEvent.DELETE";
+        public static const DELETE_SUCCESS:String = "SpellEvent.DELETE_SUCCESS";
 		public static const LIST_CHANGED:String = "SpellEvent.LIST_CHANGED";
 		public static const LOAD:String = "SpellEvent.LOAD";
         public static const NEW_SPELL:String = "SpellEvent.NEW_SPELL";
 		public static const SAVE:String = "SpellEvent.SAVE";
+        public static const SAVE_SUCCESS:String = "SpellEvent.SAVE_SUCCESS";
 		public static const SELECT:String = "SpellEvent.SELECT";
+        public static const SELECTED_CHANGED:String = "SpellEvent.SELECTED_CHANGED";
 		public static const TOGGLE_USE:String = "SpellEvent.USE";
 		
 		//---------------------------------------------------------------------

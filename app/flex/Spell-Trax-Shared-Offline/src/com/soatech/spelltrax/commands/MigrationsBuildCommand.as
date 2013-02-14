@@ -77,8 +77,9 @@ package com.soatech.spelltrax.commands
 
 			
 			// spellBookSpells
-			migration.queries.push("CREATE TABLE spellBookSpells( spellBookId integer, " +
-				"spellId integer, used integer, createdOn text, updatedOn text )");
+			migration.queries.push("CREATE TABLE spellBookSpells( pid integer primary key autoincrement," +
+                    "spellBookId integer, spellId integer, used integer, createdOn text, " +
+                    "updatedOn text )");
 			migration.queries.push("CREATE TRIGGER insert_spellBookSpells_timestamp " +
 				"AFTER INSERT ON spellBookSpells BEGIN UPDATE spellBookSpells SET createdOn = " +
 				"DATETIME('NOW') WHERE pid = new.pid; END");

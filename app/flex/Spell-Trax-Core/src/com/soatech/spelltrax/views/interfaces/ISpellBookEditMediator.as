@@ -13,6 +13,7 @@ package com.soatech.spelltrax.views.interfaces
 		function book_createSuccessHandler(event:SpellBookEvent):void;
 		function book_saveSuccessHandler(event:SpellBookEvent):void;
 		function book_spellListChangedHandler(event:SpellBookEvent):void;
+        function deleteBtn_clickHandler(event:MouseEvent):void;
 		function refreshBtn_clickHandler(event:MouseEvent):void;
 		function saveBtn_clickHandler(event:MouseEvent):void;
 		function spellList_selectEditHandler(event:SelectToggleEvent):void;
