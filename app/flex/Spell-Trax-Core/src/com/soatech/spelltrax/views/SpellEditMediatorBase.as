@@ -101,6 +101,8 @@ public class SpellEditMediatorBase extends Mediator implements ISpellEditMediato
         view.nameInput.text = spell.name;
         view.descTextArea.text = spell.description;
         view.notesTextArea.text = spell.notes;
+        view.domainCheckBox.selected = spell.isDomain;
+        view.levelInput.text = spell.level.toString();
 
         view.deleteBtn.enabled = (spell.pid > 0);
     }

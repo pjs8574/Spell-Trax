@@ -1,5 +1,6 @@
 package com.soatech.spelltrax.views {
 import com.soatech.spelltrax.events.NavigationEvent;
+import com.soatech.spelltrax.events.SelectToggleEvent;
 import com.soatech.spelltrax.events.SpellBookEvent;
 import com.soatech.spelltrax.events.SpellEvent;
 import com.soatech.spelltrax.models.SpellsProxy;
@@ -69,7 +70,8 @@ public class SpellSelectMediatorBase extends Mediator implements ISpellSelectMed
         // view events
         eventMap.mapListener( view.addBtn, MouseEvent.CLICK, this.addBtn_clickHandler );
         eventMap.mapListener( view.backBtn, MouseEvent.CLICK, this.backBtn_clickHandler );
-        eventMap.mapListener( view.spellList, IndexChangeEvent.CHANGE, this.spellList_changeHandler );
+        eventMap.mapListener( view.spellList, SelectToggleEvent.EDIT, spellList_selectEditHandler );
+        eventMap.mapListener( view.spellList, SelectToggleEvent.TOGGLE, spellList_selectToggleHandler );
 
         this.setup();
     }
@@ -131,9 +133,20 @@ public class SpellSelectMediatorBase extends Mediator implements ISpellSelectMed
     /**
      *
      * @param event
+     *
      */
-    public function spellList_changeHandler(event:IndexChangeEvent):void {
-        var spell:Spell = view.spellList.dataProvider.getItemAt(event.newIndex) as Spell;
+    public function spellList_selectEditHandler(event:SelectToggleEvent):void
+    {
+        dispatch( new SpellEvent( SpellEvent.EDIT, (event.data as Spell) ) );
+    }
+
+    /**
+     *
+     * @param event
+     */
+    public function spellList_selectToggleHandler(event:SelectToggleEvent):void
+    {
+        var spell:Spell = Spell(event.data);
 
         if( spell && spell.pid && book && book.pid )
             dispatch(new SpellBookEvent(SpellBookEvent.LINK_SPELL,book,null,null,spell));

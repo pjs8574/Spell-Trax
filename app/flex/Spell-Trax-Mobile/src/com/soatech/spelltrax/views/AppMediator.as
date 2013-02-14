@@ -104,7 +104,20 @@ import com.soatech.spelltrax.views.interfaces.IAppMediator;
             view.navigator.popView();
         }
 
+        /**
+         *
+         * @param event
+         */
         override public function spell_newHandler(event:SpellEvent):void
+        {
+            view.navigator.pushView(SpellEdit, event.spell);
+        }
+
+        /**
+         *
+         * @param event
+         */
+        override public function spell_editHandler(event:SpellEvent):void
         {
             view.navigator.pushView(SpellEdit, event.spell);
         }

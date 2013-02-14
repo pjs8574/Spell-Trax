@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<renderers:SpellToggleRenderer xmlns:fx="http://ns.adobe.com/mxml/2009"
+                               xmlns:renderers="com.soatech.spelltrax.views.renderers.*">
+
+    <fx:Script><![CDATA[
+        import com.soatech.spelltrax.events.SelectToggleEvent;
+
+        override protected function commitProperties():void
+        {
+            super.commitProperties();
+
+            this.usedCB.visible = false;
+        }
+
+        override protected function renderer_clickHandler(event:MouseEvent):void {
+            dispatchEvent(new SelectToggleEvent(SelectToggleEvent.TOGGLE, this.data));
+        }
+
+        ]]></fx:Script>
+
+</renderers:SpellToggleRenderer>

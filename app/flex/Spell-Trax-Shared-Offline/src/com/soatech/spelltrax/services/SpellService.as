@@ -51,8 +51,8 @@ package com.soatech.spelltrax.services
 			"isDomain, level, name, notes) VALUES (:description, :isDomain, :level, " +
 			":name, :notes)";
 
-        protected const SQL_UPDATE:String = "UPDATE spells SET (description = :description, " +
-                "isDomain = :isDomain, level = :level, name = :name, notes = :notes) " +
+        protected const SQL_UPDATE:String = "UPDATE spells SET description = :description, " +
+                "isDomain = :isDomain, level = :level, name = :name, notes = :notes " +
                 "WHERE pid = :pid";
 		
 		//---------------------------------------------------------------------

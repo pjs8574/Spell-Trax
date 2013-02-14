@@ -26,6 +26,7 @@ import com.soatech.spelltrax.views.interfaces.IAppMediator;
             addContextListener( SpellBookEvent.EDIT_BACK, this.book_editBackHandler );
             addContextListener( SpellBookEvent.NEW_BOOK, this.book_newHandler );
             addContextListener( SpellEvent.NEW_SPELL, this.spell_newHandler );
+            addContextListener( SpellEvent.EDIT, this.spell_editHandler );
         }
 
         //---------------------------------------------------------------------
@@ -79,6 +80,11 @@ import com.soatech.spelltrax.views.interfaces.IAppMediator;
         public function spell_newHandler(event:SpellEvent):void
         {
             CONFIG::debugtrace{ trace("Not Yet Implemented: AppMediatorBase::spell_newHandler" ); };
+        }
+
+        public function spell_editHandler(event:SpellEvent):void
+        {
+            CONFIG::debugtrace{ trace("Not Yet Implemented: AppMediatorBase::spell_editHandler" ); };
         }
     }
 }
